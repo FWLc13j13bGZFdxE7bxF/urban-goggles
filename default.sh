@@ -34,11 +34,7 @@ EXTENSIONS=(
 )
 
 CHECKPOINT_MODELS=(
-    # "https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt"
-    #"https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.ckpt"
-    #"https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors"
-    #"https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors"
-    "https://civitai.com/api/download/models/300972?type=Model&format=SafeTensor&size=full&fp=fp16" # LazyMix+ v4.0 fp16
+    "https://huggingface.co/maybent/a/blob/main/10961--lazymix-real-amateur-nudes/238469--lazymixRealAmateur_v40.full.fp16.safetensors" # LazyMix+ v4.0 fp16
 )
 
 LORA_MODELS=(
@@ -186,7 +182,11 @@ function provisioning_print_end() {
 
 # Download from $1 URL to $2 file path
 function provisioning_download() {
-    wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1"
+    if [[ "$url" == *"/huggingface.co"* && "$HF_TOKEN" ]]; then
+        wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" --header "Authorization: Bearer $HF_TOKEN" "$1"
+    else
+        wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1"
+    fi
 }
 
 provisioning_start
