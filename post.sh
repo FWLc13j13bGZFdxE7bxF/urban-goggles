@@ -2,13 +2,9 @@
 
 CHECKPOINT_MODELS=(
     # LazyMix+ v4.0-inpainting fp16
-    "https://civitai.com/api/download/models/302254?type=Model&format=SafeTensor&size=full&fp=fp16"
-    "https://civitai.com/api/download/models/429454?type=Model&format=SafeTensor&size=pruned&fp=fp16"
-    "https://civitai.com/api/download/models/489217?type=Model&format=SafeTensor&size=pruned&fp=fp16"
-)
-
-SAM_MODELS=(
-  "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth"
+    "https://huggingface.co/maybent/civit-models/resolve/main/10961--lazymix-real-amateur-nudes/239048--lazymixRealAmateur_v40Inpainting.full.fp16.safetensors"
+    "https://huggingface.co/maybent/civit-models/resolve/main/376450--duchaiten-pony-xl-no-score/400269--duchaitenPonyXLNo_ponyNoScoreV30.pruned.fp16.safetensors"
+    "https://huggingface.co/maybent/civit-models/resolve/main/376450--duchaiten-pony-xl-no-score/409326--duchaitenPonyXLNo_v40Beta.pruned.fp16.safetensors"
 )
 
 LORA_MODELS=(
@@ -20,6 +16,7 @@ CONTROLNET_MODELS=(
     "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_normal-fp16.safetensors"
     "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_openpose-fp16.safetensors"
     "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_seg-fp16.safetensors"
+    "https://huggingface.co/webui/ControlNet-modules-safetensors/blob/main/control_depth-fp16.safetensors"
     "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_inpaint.pth"
     "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_inpaint.yaml"
 )
@@ -46,7 +43,11 @@ function provisioning_get_models() {
 
 # Download from $1 URL to $2 file path
 function provisioning_download() {
-    wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1"
+    if [[ "$url" == *"/huggingface.co"* && "$HF_TOKEN" ]]; then
+        wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" --header "Authorization: Bearer $HF_TOKEN" "$1"
+    else
+        wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1"
+    fi
 }
 
 function start() {
