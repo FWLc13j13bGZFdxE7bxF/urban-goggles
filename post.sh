@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CHECKPOINT_MODELS=(
-    "https://huggingface.co/maybent/a/resolve/main/132632--epicphotogasm/350416--epicphotogasm_ultimateFidelity.pruned.fp16.safetensors"
+    "https://huggingface.co/maybent/a/resolve/main/10961--lazymix-real-amateur-nudes/239048--lazymixRealAmateur_v40Inpainting.full.fp16.safetensors"
 )
 
 LORA_MODELS=(
