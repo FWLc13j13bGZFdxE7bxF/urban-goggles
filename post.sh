@@ -2,7 +2,6 @@
 
 CHECKPOINT_MODELS=(
     "https://huggingface.co/maybent/a/resolve/main/132632--epicphotogasm/350416--epicphotogasm_ultimateFidelity.pruned.fp16.safetensors"
-    "https://huggingface.co/maybent/a/resolve/main/257749--pony-diffusion-v6-xl/228616--ponyDiffusionV6XL_v6StartWithThisOne.pruned.fp16.safetensors"
 )
 
 LORA_MODELS=(
