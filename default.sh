@@ -182,7 +182,7 @@ function provisioning_print_end() {
 
 # Download from $1 URL to $2 file path
 function provisioning_download() {
-    if [[ "$url" == *"/huggingface.co"* && "$HF_TOKEN" ]]; then
+    if [[ "$1" == *"/huggingface.co"* && "$HF_TOKEN" ]]; then
         wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" --header "Authorization: Bearer $HF_TOKEN" "$1"
     else
         wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1"
