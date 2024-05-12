@@ -3,7 +3,6 @@
 CHECKPOINT_MODELS=(
     # LazyMix+ v4.0-inpainting fp16
     "https://huggingface.co/maybent/civit-models/resolve/main/10961--lazymix-real-amateur-nudes/239048--lazymixRealAmateur_v40Inpainting.full.fp16.safetensors"
-    "https://huggingface.co/maybent/civit-models/resolve/main/376450--duchaiten-pony-xl-no-score/400269--duchaitenPonyXLNo_ponyNoScoreV30.pruned.fp16.safetensors"
     "https://huggingface.co/maybent/civit-models/resolve/main/376450--duchaiten-pony-xl-no-score/409326--duchaitenPonyXLNo_v40Beta.pruned.fp16.safetensors"
 )
 
@@ -19,6 +18,10 @@ CONTROLNET_MODELS=(
     "https://huggingface.co/webui/ControlNet-modules-safetensors/blob/main/control_depth-fp16.safetensors"
     "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_inpaint.pth"
     "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_inpaint.yaml"
+)
+
+VAE_MODELS=(
+    "https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/resolve/main/sdxl.vae.safetensors"
 )
 
 function provisioning_get_models() {
@@ -62,6 +65,9 @@ function start() {
     provisioning_get_models \
             "${WORKSPACE}/storage/stable_diffusion/models/lora" \
             "${LORA_MODELS[@]}"
+    provisioning_get_models \
+            "${WORKSPACE}/storage/stable_diffusion/models/vae" \
+            "${VAE_MODELS[@]}"
 }
 
 start
