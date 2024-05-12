@@ -1,9 +1,8 @@
 #!/bin/bash
 
 CHECKPOINT_MODELS=(
-    # LazyMix+ v4.0-inpainting fp16
-    "https://huggingface.co/maybent/civit-models/resolve/main/10961--lazymix-real-amateur-nudes/239048--lazymixRealAmateur_v40Inpainting.full.fp16.safetensors"
-    "https://huggingface.co/maybent/civit-models/resolve/main/376450--duchaiten-pony-xl-no-score/409326--duchaitenPonyXLNo_v40Beta.pruned.fp16.safetensors"
+    "https://huggingface.co/maybent/a/resolve/main/132632--epicphotogasm/350416--epicphotogasm_ultimateFidelity.pruned.fp16.safetensors"
+    "https://huggingface.co/maybent/a/resolve/main/257749--pony-diffusion-v6-xl/228616--ponyDiffusionV6XL_v6StartWithThisOne.pruned.fp16.safetensors"
 )
 
 LORA_MODELS=(
@@ -15,7 +14,7 @@ CONTROLNET_MODELS=(
     "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_normal-fp16.safetensors"
     "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_openpose-fp16.safetensors"
     "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_seg-fp16.safetensors"
-    "https://huggingface.co/webui/ControlNet-modules-safetensors/blob/main/control_depth-fp16.safetensors"
+    "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_depth-fp16.safetensors"
     "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_inpaint.pth"
     "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_inpaint.yaml"
 )
