@@ -34,7 +34,7 @@ EXTENSIONS=(
 )
 
 CHECKPOINT_MODELS=(
-    "https://huggingface.co/maybent/a/blob/main/10961--lazymix-real-amateur-nudes/238469--lazymixRealAmateur_v40.full.fp16.safetensors" # LazyMix+ v4.0 fp16
+    "https://huggingface.co/maybent/a/resolve/main/10961--lazymix-real-amateur-nudes/238469--lazymixRealAmateur_v40.full.fp16.safetensors" # LazyMix+ v4.0 fp16
 )
 
 LORA_MODELS=(
