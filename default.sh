@@ -31,6 +31,7 @@ EXTENSIONS=(
     "https://github.com/Gourieff/sd-webui-reactor"
     "https://github.com/Bing-su/adetailer"
     "https://github.com/continue-revolution/sd-webui-segment-anything"
+    "https://github.com/DominikDoom/a1111-sd-webui-tagcomplete"
 )
 
 CHECKPOINT_MODELS=(
