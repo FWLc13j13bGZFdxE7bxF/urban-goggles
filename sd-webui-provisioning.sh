@@ -22,19 +22,20 @@ EXTENSIONS=(
     "https://github.com/Mikubill/sd-webui-controlnet"
     # "https://github.com/d8ahazard/sd_dreambooth_extension"
     # "https://github.com/deforum-art/sd-webui-deforum"
-    "https://github.com/adieyal/sd-dynamic-prompts"
-    "https://github.com/ototadana/sd-face-editor"
+    # "https://github.com/adieyal/sd-dynamic-prompts"
+    # "https://github.com/ototadana/sd-face-editor"
     # "https://github.com/AlUlkesh/stable-diffusion-webui-images-browser"
     "https://github.com/hako-mikan/sd-webui-regional-prompter"
     # "https://github.com/Coyote-A/ultimate-upscale-for-automatic1111"
     "https://github.com/fkunn1326/openpose-editor"
     "https://github.com/Gourieff/sd-webui-reactor"
     "https://github.com/Bing-su/adetailer"
-    "https://github.com/continue-revolution/sd-webui-segment-anything"
+    # "https://github.com/continue-revolution/sd-webui-segment-anything"
     "https://github.com/DominikDoom/a1111-sd-webui-tagcomplete"
     "https://github.com/thomasasfk/sd-webui-aspect-ratio-helper"
-    "https://github.com/pharmapsychotic/clip-interrogator-ext"
+    # "https://github.com/pharmapsychotic/clip-interrogator-ext"
     "https://github.com/zixaphir/Stable-Diffusion-Webui-Civitai-Helper"
+    "https://github.com/Uminosachi/sd-webui-inpaint-anything.git"
 )
 
 CHECKPOINT_MODELS=(
@@ -44,12 +45,12 @@ CHECKPOINT_MODELS=(
 
 LORA_MODELS=(
     #"https://civitai.com/api/download/models/16576"
-    "https://civitai.com/api/download/models/283467"
+    # "https://civitai.com/api/download/models/283467"
 )
 
 VAE_MODELS=(
-    "https://huggingface.co/stabilityai/sd-vae-ft-ema-original/resolve/main/vae-ft-ema-560000-ema-pruned.safetensors"
-    "https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors"
+    # "https://huggingface.co/stabilityai/sd-vae-ft-ema-original/resolve/main/vae-ft-ema-560000-ema-pruned.safetensors"
+    # "https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors"
     # "https://huggingface.co/stabilityai/sdxl-vae/resolve/main/sdxl_vae.safetensors"
     # "https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/resolve/main/sdxl_vae.safetensors"
 )
